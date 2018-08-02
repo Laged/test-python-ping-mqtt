@@ -1,0 +1,23 @@
+name: test-python-ping-mqtt
+version: '0.0.1'
+summary: A quick test on building a snap with a basic python MQTT project
+description: Test application that connects to a MQTT broker, subscribes to a topic and pings a message to the topic
+confinement: strict
+grade: devel
+
+parts:
+  test-python-ping-mqtt:
+    plugin: python
+    python-packages: [paho-mqtt]
+    python-version: python2
+    source: .
+
+apps:
+  test-python-ping-mqtt:
+    command: test-python-ping-mqtt
+    daemon: simple
+    restart-condition: always
+    plugs:
+      - network
+      - network-control
+      - network-bind

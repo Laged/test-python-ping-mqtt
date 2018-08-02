@@ -1,0 +1,8 @@
+*.pyc
+*.snap
+snap/.snapcraft/
+parts/
+prime/
+stage/
+*test-env/
+.vscode/
